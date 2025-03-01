@@ -10,10 +10,7 @@ const app=express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-})
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("MongoDB Connected"))
 .catch((err)=>console.log("MongoDB Connection Error",err))
 

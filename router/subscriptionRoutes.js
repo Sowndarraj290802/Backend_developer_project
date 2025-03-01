@@ -32,7 +32,9 @@ router.post('/unsubscribe',authenticate,async(req,res)=>{
     if(!user){
         return res.status(404).json({error:"User not Found"});
     }
-    user.subscribedCategories=user.subscribedCategories.filter(cat=>!categories.includes(cat.toString()));
+    const categoryDocs = await Category.find({ name: { $in: categories } });
+    const categoryIds = categoryDocs.map(cat => cat._id.toString());
+    user.subscribedCategories = user.subscribedCategories.filter(cat => !categoryIds.includes(cat.toString()));
     await user.save();
     return res.status(200).json({message:"Unsubscribed Successfully"});
 })
