@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "93a40bb6-2901-4bed-b865-2ee3950d9675",
+		"name": "Backend_subscription_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42636083"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sowndarraj\",\r\n    \"email\":\"sowndarraj272@gmail.com\",\r\n    \"password\":\"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"sowndarraj272@gmail.com\",\r\n    \"password\":\"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2MyYTJhYzdhYjUyYzI4YjVjOTQzMjkiLCJpYXQiOjE3NDA4MDg5ODAsImV4cCI6MTc0MDgxMjU4MH0.APhT8zJPBlnWtgU7UeUWOwjyDV5ouaBgc4PzLJpak2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categories\":[\"sports\",\"business\",\"technology\",\"science\",\"entertainment\",\"health\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/subscribe",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unsubscribe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2MyYTJhYzdhYjUyYzI4YjVjOTQzMjkiLCJpYXQiOjE3NDA4MDg5ODAsImV4cCI6MTc0MDgxMjU4MH0.APhT8zJPBlnWtgU7UeUWOwjyDV5ouaBgc4PzLJpak2w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categories\":[\"sports\",\"business\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/unsubscribe",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"unsubscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personalized_content",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2MyYTJhYzdhYjUyYzI4YjVjOTQzMjkiLCJpYXQiOjE3NDA4MDg5ODAsImV4cCI6MTc0MDgxMjU4MH0.APhT8zJPBlnWtgU7UeUWOwjyDV5ouaBgc4PzLJpak2w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/personalized",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"personalized"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
